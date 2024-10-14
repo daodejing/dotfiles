@@ -4,10 +4,9 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd({ cmd = "colorscheme", args = { "kanagawa" } })
+			vim.cmd({ cmd = "colorscheme", args = { "kanagawa-dragon" } })
 		end,
 	},
-	"moll/vim-bbye",
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
@@ -27,8 +26,6 @@ return {
 	"nvim-telescope/telescope-live-grep-args.nvim",
 	"princejoogie/dir-telescope.nvim",
 	"lewis6991/gitsigns.nvim",
-	"p00f/nvim-ts-rainbow",
-	-- "nvim-treesitter/playground",
 	{
 		"ggandor/leap.nvim",
 		config = function()
@@ -44,18 +41,10 @@ return {
 	"tpope/vim-repeat",
 	"tpope/vim-speeddating",
 	"tpope/vim-obsession",
-	"christoomey/vim-tmux-navigator",
 	{
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup()
-		end,
-	},
-	{
-		"akinsho/bufferline.nvim",
-		enabled = false,
-		config = function()
-			require("bufferline").setup()
 		end,
 	},
 	{
@@ -71,55 +60,8 @@ return {
 		end,
 	},
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		keys = {
-			{ "<leader>ft", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
-		},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("neo-tree").setup()
-		end,
-	},
-	{
-		"VonHeikemen/lsp-zero.nvim",
-		dependencies = {
-			"neovim/nvim-lspconfig",
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			"hrsh7th/nvim-cmp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-nvim-lua",
-			"L3MON4D3/LuaSnip",
-			"rafamadriz/friendly-snippets",
-			{ "lukas-reineke/lsp-format.nvim", config = true },
-		},
-		config = function()
-			local lsp = require("lsp-zero")
-			lsp.preset("recommended")
-			lsp.on_attach(function(client, bufnr)
-				require("lsp-format").on_attach(client, bufnr)
-			end)
-			lsp.nvim_workspace()
-			lsp.setup()
-			vim.diagnostic.config({ virtual_text = true })
-		end,
-	},
-	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				-- ensure_installed = { "c", "lua", "rust" },
-				highlight = { enable = true },
-			})
-		end,
 	},
 	{
 		"vhyrro/luarocks.nvim",
