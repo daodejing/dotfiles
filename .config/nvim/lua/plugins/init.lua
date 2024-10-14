@@ -26,10 +26,6 @@ return {
 	"benfowler/telescope-luasnip.nvim",
 	"nvim-telescope/telescope-live-grep-args.nvim",
 	"princejoogie/dir-telescope.nvim",
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-	},
 	"lewis6991/gitsigns.nvim",
 	"p00f/nvim-ts-rainbow",
 	-- "nvim-treesitter/playground",
