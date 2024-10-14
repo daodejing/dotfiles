@@ -32,7 +32,7 @@ return {
 	},
 	"lewis6991/gitsigns.nvim",
 	"p00f/nvim-ts-rainbow",
-	"nvim-treesitter/playground",
+	-- "nvim-treesitter/playground",
 	{
 		"ggandor/leap.nvim",
 		config = function()
